@@ -1,0 +1,65 @@
+Student Registration System
+1)Student info:
+id(sid) :super key
+name(fn and ln)
+status(freshmen, sophomore, junior, senior, graduate)
+gpa
+email Address: superkey
+
+2)Course info(strong entity):
+course id(cid)
+title(title)
+number of credit hours(credits)	
+Note: Ask about the dept_code and course_number
+
+3)Class info(weak entity set):
+a section number(sect#)
+the year of offering(year)
+the semester of offering(semester)
+the max no of students allowed(limit)
+the actual size of the class(size)
+a classroom assigned to the class(classroom)
+the capacity of the classroom(capacity)
+the time of the class(time) with start time(start_time) and end time(end_time)
+the days of the class(days)
+Note: >=5 students
+
+4)Enrollment info:
+letter grade(lgrade) Allowed: {A, B, C, D, F, I, null}
+number grade(ngrade) Allowed:{A <--> 4, B <--> 3, C <--> 2, D <--> 1, F <--> 0 and I <--> null}
+Contraints: Class registration limit: >=1 class AND <=4 class/semester. 
+Student(,)--(,)Enrollment
+Note:No student is allowed to enroll in different classes of the same course more than once
+
+5)Department info:
+a name(deptname): super key
+a telephone(phone#)
+an office location(office)
+Contraints: Student(,)--(,)Department(,)--(,)Faculty member
+
+6)Faculty info:
+an id number (fid) superkey
+a name (name) including first name and last name
+an office (office)
+a rank (rank)
+an email address(email)
+
+8. Teaching assignment information. We keep track of which faculty member teaches what 
+classes. Each class is taught by exactly one faculty member. A faculty member may teach 
+zero to two classes in a semester. 
+9. Student major. Each student is associated with either one or two departments, i.e., the 
+majoring departments.
+10. Faculty affiliation information. Each faculty member belongs to one or two departments, and 
+a department may have one or more faculty members.
+11. Course offering. Each course is offered by exactly one department and a department may 
+offer many courses.
+
+
+Notes for me: Check for exception as well
+Statics vs Dynamic:
+Objects, attributes,constraints or entities: Static
+Transaction, queries: Dynamic
+
+Generalization: Common out the same attributes/Sharing/Inheritance(Here relationships/how info is being shared(In action box: like takes in the diamond shape object) also gets inherited), For eg., Students are getting generalized i.e. G_students and UG_students
+Specialization: Undergrad students are specialized students
+Super Entity set is the set which is the common base upon which other entities can be branched out.
