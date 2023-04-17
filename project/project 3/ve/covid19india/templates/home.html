@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>COVID 19</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID 19</title>
+</head>
+<body style="margin-top: 10%">
+<h2 style="text-align:center">Welcome to the analytics of covid dataset of India!</h2>
+<div class="row">
+    <form method="get" action="/getdata" style="text-align:center">
+        <select name=data method="GET" action="/">
+            <option name="state" selected>Select any state</option>
+            {% for colour in data %}
+            <option value= "{{colour}}" name="state">{{colour}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+</body>
+</html>
